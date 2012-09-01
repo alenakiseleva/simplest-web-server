@@ -8,7 +8,7 @@ host_address = sys.argv[2]
 serversocket = socket.socket()
 serversocket.bind((host_address, port))
 serversocket.listen(1)
-while 1:
+while True:
 	(clientsocket, address) = serversocket.accept()
 	query = clientsocket.recv(2048)
 	if not query:
@@ -18,7 +18,7 @@ while 1:
 	print 'hey'
 	if query_strings[0] == 'GET':
 		print 'get'
-		filePath = os.getcwd()+query_strings[1]
+		filePath = os.getcwd() + query_strings[1]
 		if os.path.isdir(filePath):
 			if filePath[-1] != '/':
 				filePath = filePath + '/'
