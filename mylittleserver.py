@@ -4,8 +4,9 @@ import socket
 import os
 
 port = int(sys.argv[1])
+host_address = sys.argv[2]
 serversocket = socket.socket()
-serversocket.bind(('localhost', port))
+serversocket.bind((host_address, port))
 serversocket.listen(1)
 while 1:
 	(clientsocket, address) = serversocket.accept()
