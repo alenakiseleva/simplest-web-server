@@ -1,9 +1,9 @@
 #!/usr/bin/python
 import sys
-port = int(sys.argv[1])
 import socket
 import os
 
+port = int(sys.argv[1])
 serversocket = socket.socket()
 serversocket.bind(('localhost', port))
 serversocket.listen(1)
